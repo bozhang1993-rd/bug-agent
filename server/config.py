@@ -95,5 +95,9 @@ class Config:
     def server_port(self) -> int:
         return self.get("server.port", 8765)
 
+    @property
+    def default_log_dir(self) -> str:
+        return self.get("log.default_log_dir", "/Users/bz/code/logs")
+
 
 config = Config()

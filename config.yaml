@@ -2,6 +2,8 @@
 
 # 日志获取配置
 log:
+  # 日志文件默认目录
+  default_log_dir: "/Users/bz/code/logs"
   api:
     base_url: "http://localhost:8080"
     api_key: "${LOG_API_KEY}"
@@ -38,6 +40,12 @@ project:
   java_package_base: "com.bank.loan"
   source_dirs:
     - "src/main/java"
+  # 文档目录
+  document_dirs:
+    - "docs"
+    - "doc"
+    - "."
+    - "sql"
   # 忽略的目录
   exclude_dirs:
     - "target"
