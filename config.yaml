@@ -1,0 +1,54 @@
+# Bug Agent 配置文件
+
+# 日志获取配置
+log:
+  api:
+    base_url: "http://localhost:8080"
+    api_key: "${LOG_API_KEY}"
+    endpoints:
+      log_list: "/api/v1/logs"
+      log_detail: "/api/v1/logs/{log_id}"
+      search: "/api/v1/logs/search"
+    timeout: 30
+
+# LLM 配置
+llm:
+  # 当前使用的 LLM 提供商: deepseek / glm / minimax
+  provider: "deepseek"
+
+  providers:
+    deepseek:
+      api_key: "${DEEPSEEK_API_KEY}"
+      base_url: "https://api.deepseek.com/v1"
+      model: "deepseek-coder"
+      
+    glm:
+      api_key: "${GLM_API_KEY}"
+      base_url: "https://open.bigmodel.cn/api/paas/v4"
+      model: "glm-4"
+      
+    minimax:
+      api_key: "${MINIMAX_API_KEY}"
+      base_url: "https://api.minimax.chat/v1"
+      model: "MiniMax-M2.1"
+
+# 项目配置
+project:
+  root_dir: "/Users/bz/code/loan-core-sys"
+  java_package_base: "com.bank.loan"
+  source_dirs:
+    - "src/main/java"
+  # 忽略的目录
+  exclude_dirs:
+    - "target"
+    - "build"
+    - ".git"
+    - "node_modules"
+
+# 服务配置
+server:
+  host: "127.0.0.1"
+  port: 8765
+  cors_origins:
+    - "http://localhost"
+    - "http://127.0.0.1"

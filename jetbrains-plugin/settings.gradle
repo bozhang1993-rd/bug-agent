@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://cache-redirector.jetbrains.com/plugins.jetbrains.team/maven/p/ij/intellij-dependencies' }
+        maven { url 'https://cache-redirector.jetbrains.com/packages.jetbrains.team/maven/p/ij/intellij-dependencies' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'bug-agent'
+include 'jetbrains-plugin'

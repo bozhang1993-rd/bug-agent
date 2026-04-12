@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <id>com.bugagent</id>
+    <name>Bug Agent</name>
+    <version>1.0.0</version>
+    <vendor>Bug Agent Team</vendor>
+    <description>智能Bug分析助手 - 帮助开发人员分析和解决测试环境的Bug</description>
+    <change-notes>
+        1.0.0 - 初始版本
+    </change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.vcs</depends>
+
+    <application-components>
+        <component>
+            <implementation-class>com.bugagent.BugAgentPlugin</implementation-class>
+            <interface-class>com.bugagent.BugAgentPlugin</interface-class>
+        </component>
+    </application-components>
+
+    <actions>
+        <action id="BugAgent.Analyze" class="com.bugagent.AnalyzeAction" text="分析Bug" description="使用Bug Agent分析当前错误">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolwindow id="BugAgent" anchor="right" factoryClass="com.bugagent.ToolWindowFactory"/>
+    </extensions>
+
+</idea-plugin>
